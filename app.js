@@ -2,6 +2,11 @@
 //Animation scroll to anchor
 //::::::::::::::::::::::::::::::::::::::::::::::::::
 
+function scroll_part0(options = { block: "start", inline: "nearest", behavior: "smooth" }) {
+    const part0 = document.querySelector('.part0');
+    part0.scrollIntoView(options);
+}
+
 function scroll_part1(options = { block: "start", inline: "nearest", behavior: "smooth" }) {
     const part1 = document.querySelector('.part1');
     part1.scrollIntoView(options);
@@ -22,6 +27,21 @@ function scroll_part4(options = { block: "start", inline: "nearest", behavior: "
     part4.scrollIntoView(options);
 }
 
+function scroll_part5(options = { block: "start", inline: "nearest", behavior: "smooth" }) {
+    const part5 = document.querySelector('.part5');
+    part5.scrollIntoView(options);
+}
+
+function scroll_part6(options = { block: "start", inline: "nearest", behavior: "smooth" }) {
+    const part6 = document.querySelector('.part6');
+    part6.scrollIntoView(options);
+}
+
+function scroll_part7(options = { block: "start", inline: "nearest", behavior: "smooth" }) {
+    const part7 = document.querySelector('.part7');
+    part7.scrollIntoView(options);
+}
+
 
 
 document.querySelectorAll('.option').forEach(option => {
@@ -37,10 +57,10 @@ document.querySelectorAll('.option').forEach(option => {
 		// Добавление стиля для выбранной кнопки
 		if (answer === 'correct') {
 			option.classList.add('correct');
-			feedbackText.textContent = 'Верно! Золото используется как проводник — им покрывают контакты. Старые гаджеты в этом смысле были богаче, но золото есть и в современных смартфонах. А также в организме человека — так что несколько миллиграммов золота, серебра и рутения есть и у вас.';
+			feedbackText.textContent = 'Угадали! Этого духа звали Nickel — «озорник» на немецком. Он «подбрасывал» искателям меди минерал красного цвета, похожий на медную руду.';
 		} else {
 			option.classList.add('wrong');
-			feedbackText.textContent = 'Неправильно, попробуйте еще раз';
+			feedbackText.textContent = 'Неправильно, элемент никель назван в честь духа гор. Его звали Nickel — «озорник» на немецком. Он «подбрасывал» искателям меди минерал красного цвета, похожий на медную руду.';
 		}
 	});
 });
@@ -58,10 +78,10 @@ document.querySelectorAll('.option2').forEach(option2 => {
 		// Добавление стиля для выбранной кнопки
 		if (answer2 === 'correct2') {
 			option2.classList.add('correct2');
-			feedbackText2.textContent = 'По одной из самых популярных теорий, драгоценные металлы попали на Землю в результате столкновений с космическими телами. Этим объясняется тот факт, что металлы распределены по земной поверхности неравномерно. ';
+			feedbackText2.textContent = 'Верно! Никель — микроэлемент, который необходим всем живым организмам. Роль этого металла в организме изучена не до конца, но известно, что он участвует в ферментативных реакциях и влияет на окислительные процессы. Его среднее содержание в морских животных — 0,00016 %, в растениях чуть меньше — 0,00005 % массы тела, в организме человека 0,0000012 %, а в наземных животных всего 0,000001 %.';
 		} else {
 			option2.classList.add('wrong2');
-			feedbackText2.textContent = 'Неправильно, попробуйте еще раз';
+			feedbackText2.textContent = 'Неправильно. Никель — микроэлемент, который необходим всем живым организмам. Роль этого металла в организме изучена не до конца, но известно, что он участвует в ферментативных реакциях и влияет на окислительные процессы. Его среднее содержание в морских животных — 0,00016 %, в растениях чуть меньше — 0,00005 % массы тела, в организме человека 0,0000012 %, а в наземных животных всего 0,000001 %.';
 		}
 	});
 });
@@ -79,10 +99,10 @@ document.querySelectorAll('.option3').forEach(option3 => {
 		// Добавление стиля для выбранной кнопки
 		if (answer3 === 'correct3') {
 			option3.classList.add('correct3');
-			feedbackText3.textContent = 'Самым крупным самородком, найденным в Красноярском крае, по праву считается «Бычья голова» весом 31 кг и 570 гр. Его подняли 10 января 1898 года на Спасо-Преображенском прииске. До наших дней он не сохранился, но существует точный муляж. Посмотреть его можно в Музее драгоценных металлов Красцветмета. ';
+			feedbackText3.textContent = 'В точку! Золото 585 пробы содержит 58,5 % золота, а остальные 41,5 % — это добавки других металлов, таких как медь, серебро или никель, мельхион — сплав меди с никелем, нейзильбер — сплав меди, никеля и цинка, а вот баббит — это сплав из олова, сурьмы и меди.';
 		} else {
 			option3.classList.add('wrong3');
-			feedbackText3.textContent = 'Неправильно, попробуйте еще раз';
+			feedbackText3.textContent = 'Неправильно. Золото 585 пробы содержит 58,5 % золота, а остальные 41,5 % — это добавки других металлов, таких как медь, серебро или никель, мельхион — сплав меди с никелем, нейзильбер — сплав меди, никеля и цинка, а вот баббит — это сплав из олова, сурьмы и меди.';
 		}
 	});
 });
@@ -122,4 +142,239 @@ const observer = new IntersectionObserver((entries, observer) => {
   });
   
 
+
+
+// аккрдеон
+const buttons = [
+  { btn: "btn1", cnt: "cnt1" },
+  { btn: "btn2", cnt: "cnt2" },
+  { btn: "btn3", cnt: "cnt3" }
+];
+
+buttons.forEach(({ btn, cnt }) => {
+  const buttonEl = document.getElementById(btn);
+  const contentEl = document.getElementById(cnt);
+
+  buttonEl.addEventListener("click", () => {
+    const isVisible = contentEl.style.display === "block";
+    contentEl.style.display = isVisible ? "none" : "block";
+  });
+});
+
+// Установить начальное состояние: первый открыт, остальные скрыты
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("cnt1").style.display = "block";
+  document.getElementById("cnt2").style.display = "none";
+  document.getElementById("cnt3").style.display = "none";
+});
+
+
+
+
+
+
   
+
+
+
+function switchTab(tabId) {
+  // Снять активность со всех вкладок
+  document.querySelectorAll('.ziwunbke').forEach(tab => tab.classList.remove('active'));
+  document.querySelectorAll('.azkqwrny').forEach(content => content.classList.remove('active'));
+
+  // Назначить активную вкладку и контент
+  const index = ['tab1', 'tab2', 'tab3', 'tab4', 'tab5'].indexOf(tabId);
+  document.querySelectorAll('.ziwunbke')[index].classList.add('active');
+  document.getElementById(tabId).classList.add('active');
+}
+
+
+
+
+
+// слайдер 2
+const cards3 = document.querySelectorAll('.xmqoefha');
+const sections = document.querySelectorAll('.kjdhxowq');
+
+cards3.forEach(card => {
+  card.addEventListener('click', () => {
+    const targetId = card.getAttribute('data-tab');
+
+    // Сброс активных карточек
+    cards3.forEach(c => c.classList.remove('active'));
+    card.classList.add('active');
+
+    // Показ нужного блока
+    sections.forEach(section => {
+      section.style.display = section.id === targetId ? 'block' : 'none';
+    });
+  });
+});
+
+
+
+
+
+
+
+
+// анимация чисел роста
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const counters = document.querySelectorAll(".animnum");
+
+  const animateCounter = (counter) => {
+    const target = +counter.getAttribute("data-target");
+    const duration = 1500;
+    const stepTime = 15;
+    const steps = duration / stepTime;
+    let current = 0;
+    const increment = target / steps;
+
+    const updateCount = () => {
+      current += increment;
+      if (current >= target) {
+        counter.textContent = target;
+      } else {
+        counter.textContent = Math.floor(current);
+        requestAnimationFrame(updateCount);
+      }
+    };
+
+    updateCount();
+  };
+
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const counter = entry.target;
+          animateCounter(counter);
+          observer.unobserve(counter); // отключаем наблюдение, чтобы не повторялось
+        }
+      });
+    },
+    {
+      threshold: 0.6 // срабатывает, когда 60% элемента видно
+    }
+  );
+
+  counters.forEach(counter => {
+    observer.observe(counter);
+  });
+});
+
+
+
+
+// увеличивает фото по клику с классом open
+
+// Добавляем CSS-анимации
+const style = document.createElement('style');
+style.textContent = `
+  #overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  #overlay.active {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  #overlay img {
+    max-height: 90vh;
+    max-width: 90vw;
+    object-fit: contain;
+    border-radius: 1rem;
+    transform: scale(0.8);
+    opacity: 0;
+    transition: transform 0.35s ease, opacity 0.35s ease;
+  }
+
+  #overlay.show img {
+    transform: scale(1);
+    opacity: 1;
+  }
+`;
+document.head.appendChild(style);
+
+// Создание оверлея
+const overlay = document.createElement('div');
+overlay.id = 'overlay';
+const overlayImage = document.createElement('img');
+overlay.appendChild(overlayImage);
+document.body.appendChild(overlay);
+
+// Открытие картинки
+document.querySelectorAll('img.open').forEach(img => {
+  img.addEventListener('click', () => {
+    overlayImage.src = img.src;
+    overlay.classList.add('active');
+
+    // Делаем плавную анимацию после небольшого таймаута (для активации перехода)
+    setTimeout(() => {
+      overlay.classList.add('show');
+    }, 10);
+  });
+});
+
+// Закрытие
+overlay.addEventListener('click', () => {
+  overlay.classList.remove('show'); // убираем анимацию
+  setTimeout(() => {
+    overlay.classList.remove('active'); // затем убираем сам оверлей
+  }, 300); // подождём завершения анимации
+});
+
+
+
+//::::::::::::::::::::::::::::::::::::::::::::::::::
+// Большой автослайдер с фото
+//::::::::::::::::::::::::::::::::::::::::::::::::::
+  
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  //===== MICRO-SLIDER begin
+  const __ms = document.querySelector('.micro-slider');
+  const __msSlider = new MicroSlider(__ms, {
+    indicators: true,
+    indicatorText: '',
+    slide_easing: 'ease-in-out' // <--- Добавьте эту строку
+  });
+  const __msTimer = 3000;
+  let __msAutoplay = setInterval(() => __msSlider.next(), __msTimer);
+
+  // Initialize Hammer.js AFTER the element is selected
+  // The 'new' keyword for Hammer needs to be capitalized
+  const hammer = new Hammer(__ms);
+
+
+  // Detect gesture tap event with Hammer.js library
+  hammer.on('tap', function(e) {
+    clearInterval(__msAutoplay);
+    console.log(e.type + ' gesture detected. Autoplay stopped.');
+  });
+
+  // Detect gesture swipe event with Hammer.js library
+  hammer.on('swipe', function(e) {
+    clearInterval(__msAutoplay);
+    // Restart autoplay after a swipe
+    __msAutoplay = setInterval(() => __msSlider.next(), __msTimer);
+    console.log(e.type + ' gesture detected. Autoplay restarted.');
+  });
+
+});
